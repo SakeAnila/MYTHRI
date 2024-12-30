@@ -1,0 +1,1090 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body {
+  background: #cbdcf7;
+  font-family: "Poppins", sans-serif;
+}
+
+*::selection {
+  background: #da2b2b;
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+  background: rgb(235, 202, 245);
+}
+html::-webkit-scrollbar-thumb {
+  background: #420177;
+}
+
+/* pre loader start */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: #e6eff1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.loader-container.fade-out {
+  top: -120%;
+}
+/* pre loader end */
+
+/* navbar starts */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.7rem 10%;
+  height: 6.5rem;
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.3);
+}
+section {
+  min-height: 100vh;
+  padding: 2rem 9%;
+}
+.heading {
+  font-size: 3.5rem;
+  color: rgb(32, 32, 32);
+  font-weight: 800;
+  text-align: center;
+}
+.heading span {
+  color: rgb(167, 3, 30);
+}
+header .logo {
+  font-size: 1.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #0e2431;
+}
+header .logo i {
+  font-size: 2.2rem;
+}
+header .logo:hover {
+  color: #da0416;
+}
+header .navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .navbar li {
+  margin-left: 2.5rem;
+}
+header .navbar ul li a {
+  font-size: 1.57rem;
+  color: #0e2431;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.04rem;
+  transition: 0.2s;
+}
+header .navbar ul li a.active,
+header .navbar ul li a:hover {
+  color: #da0416;
+  border-bottom: 0.2rem solid #da0416;
+  padding: 0.5rem 0;
+}
+/* navbar ends */
+
+/* hamburger icon starts*/
+#menu {
+  font-size: 2rem;
+  cursor: pointer;
+  color: rgb(24, 2, 63);
+  display: none;
+}
+@media (max-width: 768px) {
+  #menu {
+    display: block;
+  }
+  header .navbar {
+    position: fixed;
+    top: 6.5rem;
+    right: -120%;
+    width: 75%;
+    height: 100%;
+    text-align: left;
+    align-items: flex-start;
+    background-color: #0e0f31;
+  }
+  header .navbar ul {
+    flex-flow: column;
+    padding: 1rem;
+  }
+  header .navbar ul li {
+    text-align: center;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    width: 26rem;
+  }
+  header .navbar ul li a {
+    display: block;
+    padding: 1rem;
+    text-align: left;
+    color: #fff;
+    font-size: 2rem;
+  }
+  header .navbar ul li a.active,
+  header .navbar ul li a:hover {
+    padding: 1rem;
+    color: #fff;
+    border-radius: 0.5rem;
+    border-bottom: 0.5rem solid #da0416;
+  }
+  .fa-times {
+    transform: rotate(180deg);
+  }
+  header .navbar.nav-toggle {
+    right: 0;
+  }
+}
+/* Home Section Styling */
+/* Home Section */
+.home {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('./assets/images/WhatsApp Image 2024-12-20 at 3.46.58 PM.jpeg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Logo Styling */
+.home .logo {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 350px; /* Adjust logo size */
+    min-height: auto; /* Maintain aspect ratio */
+    z-index: 5;
+}
+
+/* Semi-Transparent Overlay */
+.home .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay with 50% opacity */
+    z-index: 1; /* Ensure it's beneath the content */
+}
+
+/* Content Styling */
+.home .content {
+    position: relative; /* Position relative for proper z-indexing */
+    z-index: 2; /* Ensures text is above the overlay */
+}
+
+.home .content h2 {
+    font-size: 6rem; /* Large, bold heading */
+    line-height: 1.2;
+    margin: 0;
+    padding-top: 80px; /* Adds space at the top, moving the heading down */
+    animation: fadeIn 2s ease-in-out;
+}
+
+.home .content h2 span {
+    display: inline-block;
+    color: #FFD700; /* Gold Color for Highlighted Text */
+    font-weight: bold;
+    animation: pulse 2s infinite alternate;
+}
+
+/* Description Styling */
+.home .content .description {
+    font-size: 3.5rem; /* Adjust text size */
+    margin-top: 100px; /* Adds gap between heading and description */
+    line-height: 1.5;
+    color: white;
+    margin-bottom: 0;
+}
+
+
+.home .content .description .highlighted {
+    color: #FFD700; /* Gold color for highlights */
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+/* adjustments */
+/* Responsive Adjustments */
+/* Adjustments for mobile responsiveness */
+@media (max-width: 576px) {
+    .home {
+        padding: 20px; /* Add padding for smaller screens */
+    }
+
+    .home .content h2 {
+        font-size: 3rem; /* Increase heading size for better readability */
+        padding-top: 50px; /* Adjust spacing */
+        margin-top: 100px;
+    }
+
+    .home .content .description {
+        font-size: 2rem; /* Larger description text for mobile */
+        margin-top: 40px;
+        margin-bottom: 0px;
+    }
+
+    .home .logo {
+        width: 200px; /* Ensure the logo is larger and more visible */
+        top: 10%; /* Adjust positioning for visibility */
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .home .content h2 {
+        font-size: 3rem; /* Increase heading size for very small devices */
+        line-height: 1.3; /* Ensure proper line spacing */
+        margin-top: 100px;
+<<<<<<< HEAD
+
+=======
+      
+>>>>>>> bca97af6ff7de484cb13ec5889d93450fce2b656
+    }
+
+    .home .content .description {
+        font-size: 2rem; /* Larger description text for readability */
+        margin-top: 40px;
+        margin-bottom: 0px;
+    }
+
+    .home .logo {
+        width: 180px; /* Larger logo for better visibility */
+        top: 10%; /* Adjust positioning */
+        margin-bottom: 20px;
+    }
+}
+
+/* services section starts */
+.services {
+  background-image: url('./assets/images/WhatsApp Image 2024-12-20 at 4.09.45 PM.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh; /* Full viewport height */
+  position: relative;
+  margin-top: 0; /* No top margin */
+  padding-top: 0; /* No top padding */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding-top: 0; /* Content starts at the top */
+}
+
+.heading {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.box {
+  background: black;
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 800px;
+  margin: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+  transform: scale(1.03);
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.box img {
+  width: 100%;
+  min-height: auto;
+  max-height: 500px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+h3 {
+  margin-top: 15px;
+  font-size: 2.5rem;
+  color: gold;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h4 {
+  margin-top: 10px;
+  font-size: 1.8rem;
+  color: black;
+  font-weight: bold;
+}
+.experience .group-label {
+  display: none; /* Hidden by default */
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #333;
+}
+.box p {
+  font-size: 1.2rem;
+  margin: 0 1rem 1rem 1rem;
+  color: #555;
+}
+@media (max-width: 768px) {
+  .group-label {
+    display: block; /* Display group label for mobile */
+    width: 100%;
+  }
+}
+
+/* adjustments */
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .heading {
+    font-size: 3.5rem; /* Reduce heading size */
+  }
+
+  .box-container {
+    flex-direction: row; /* Arrange boxes horizontally */
+    flex-wrap: wrap; /* Allow wrapping */
+  }
+
+  .box {
+    width: 45%; /* Adjust box size */
+  }
+
+  .box img {
+    max-height: 400px; /* Reduce image height */
+  }
+}
+
+@media (max-width: 992px) {
+  .heading {
+    font-size: 3rem; /* Further reduce heading size */
+    margin-bottom: 1.5rem;
+  }
+
+  .box {
+    width: 90%; /* Increase width for smaller screens */
+  }
+
+  .box img {
+    max-height: 300px; /* Reduce image height */
+  }
+
+  .box p {
+    font-size: 1rem; /* Adjust text size */
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2.5rem; /* Adjust heading size for tablets */
+    margin-top: 0px;
+  }
+
+  .box {
+    width: 95%; /* Full width for boxes */
+  }
+
+  h3 {
+    font-size: 2rem; /* Reduce size of titles */
+  }
+
+  h4 {
+    font-size: 1.5rem; /* Adjust subtitles */
+  }
+
+  .box p {
+    font-size: 0.9rem; /* Smaller text for descriptions */
+  }
+}
+
+@media (max-width: 576px) {
+  .services {
+    height: auto; /* Allow height to adjust to content */
+    padding-bottom: 20px; /* Add bottom padding for spacing */
+  }
+
+  .heading {
+    font-size: 2rem; /* Mobile-friendly heading size */
+    heading: 0px;
+  }
+
+  .box {
+    width: 100%; /* Full width for mobile screens */
+    margin: 1rem 0; /* Adjust spacing between boxes */
+  }
+
+  .box img {
+    max-height: 250px; /* Smaller images */
+  }
+
+  h3 {
+    font-size: 1.8rem; /* Adjust title size */
+  }
+
+  h4 {
+    font-size: 1.2rem; /* Adjust subtitle size */
+  }
+
+  .box p {
+    font-size: 0.8rem; /* Smaller text for mobile */
+  }
+}
+
+@media (max-width: 400px) {
+  .heading {
+    font-size: 1.8rem; /* Smaller heading for very small devices */
+    margin-top: 0px;
+  }
+
+  .box img {
+    max-height: 200px; /* Further reduce image height */
+  }
+
+  h3 {
+    font-size: 1.5rem; /* Reduce title size */
+  }
+
+  h4 {
+    font-size: 1rem; /* Smaller subtitles */
+  }
+
+  .box p {
+    font-size: 0.7rem; /* Smallest text size */
+  }
+}
+
+
+
+
+/* 2.Services Section */
+.services {
+  position: relative; /* Stack on top of particles */
+  z-index: 1; /* Ensure this content is above particles */
+  background: transparent; /* Let particles show through */
+  padding: 0rem 2rem; /* Adjust padding as needed */
+  min-height: 80vh;
+  text-align: center;
+  margin-top: 0;
+}
+
+.services .heading {
+  font-size: 4rem; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: white; /* Changed text color to white */
+  padding: 0rem;
+  margin-top: 0;
+}
+
+.services .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.services .box {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  width: 80%; /* Enlarged box width */
+  max-width: 800px; /* Increased max width */
+  margin: 1.5rem; /* Added spacing */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.services .box:hover {
+  transform: scale(1.03);
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.services .box img {
+  width: 100%; /* Occupy the entire box width */
+  min-height: auto; /* Maintain aspect ratio */
+  max-height: 500px; /* Restrict max height for consistency */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.services h3 {
+  margin-top: 15px; /* Space above the text */
+  font-size: 2.5rem; /* Adjusted font size for visibility */
+  color: gold; /* Text color */
+  font-weight: bold; /* Ensure text stands out */
+  font-family: 'Open Sans', sans-serif;
+}
+
+.services h4 {
+  margin-top: 10px;
+  font-size: 1.8rem; /* Slightly increased font size */
+  color: black;
+  font-weight: bold;
+}
+
+.services .box p {
+  font-size: 1.2rem;
+  margin: 0 1rem 1rem 1rem;
+  color: #555;
+}
+.services {
+  background-image: url('./assets/images/WhatsApp Image 2024-12-20 at 4.09.45 PM.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh; /* Full viewport height */
+  position: relative;
+  margin-top: 0; /* No top margin */
+  padding-top: 0; /* No top padding */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding-top: 0; /* Content starts at the top */
+}
+
+.heading {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.box {
+  background: black;
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 800px;
+  margin: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+  transform: scale(1.03);
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.box img {
+  width: 100%;
+  min-height: auto;
+  max-height: 500px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+h3 {
+  margin-top: 15px;
+  font-size: 2.5rem;
+  color: gold;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h4 {
+  margin-top: 10px;
+  font-size: 1.8rem;
+  color: black;
+  font-weight: bold;
+}
+
+.box p {
+  font-size: 1.2rem;
+  margin: 0 1rem 1rem 1rem;
+  color: #555;
+}
+
+
+
+/* Services Section */
+/* Services Section */
+.services {
+  position: relative; /* Stack on top of particles */
+  z-index: 1; /* Ensure this content is above particles */
+  background: transparent; /* Let particles show through */
+  padding: 0rem 2rem; /* Adjust padding as needed */
+  min-height: 80vh;
+  text-align: center;
+  margin-top: 0;
+}
+
+.services .heading {
+  font-size: 4rem; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: white; /* Changed text color to white */
+  padding: 0rem;
+  margin-top: 0;
+}
+
+.services .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.services .box {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  width: 80%; /* Enlarged box width */
+  max-width: 800px; /* Increased max width */
+  margin: 1.5rem; /* Added spacing */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.services .box:hover {
+  transform: scale(1.03);
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.services .box img {
+  width: 100%; /* Occupy the entire box width */
+  min-height: auto; /* Maintain aspect ratio */
+  max-height: 500px; /* Restrict max height for consistency */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.services h3 {
+  margin-top: 15px; /* Space above the text */
+  font-size: 2.5rem; /* Adjusted font size for visibility */
+  color: gold; /* Text color */
+  font-weight: bold; /* Ensure text stands out */
+  font-family: 'Open Sans', sans-serif;
+}
+
+.services h4 {
+  margin-top: 10px;
+  font-size: 1.8rem; /* Slightly increased font size */
+  color: black;
+  font-weight: bold;
+}
+
+.services .box p {
+  font-size: 1.2rem;
+  margin: 0 1rem 1rem 1rem;
+  color: #555;
+}
+
+@media screen and (max-width: 1024px) {
+  .services .heading {
+    font-size: 3rem;
+  }
+
+  .services .box {
+    width: 90%; /* Slightly smaller width */
+    max-width: 700px;
+  }
+
+  .services h3 {
+    font-size: 2.2rem;
+  }
+
+  .services .box p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Devices (576px to 767px) */
+@media screen and (max-width: 767px) {
+  .services {
+    padding: 1rem;
+  }
+
+  .services .heading {
+    font-size: 2.5rem;
+  }
+
+  .services .box {
+    width: 100%; /* Full-width boxes */
+    max-width: none;
+  }
+
+  .services h3 {
+    font-size: 2rem;
+  }
+
+  .services .box p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile Devices (up to 575px) */
+@media screen and (max-width: 575px) {
+  .services .heading {
+    font-size: 2rem;
+  }
+
+  .services .box {
+    margin: 1rem;
+  }
+
+  .services h3 {
+    font-size: 1.8rem;
+  }
+
+  .services .box p {
+    font-size: 0.8rem;
+  }
+}
+/* Experience section starts */
+/* Experience section starts */
+.experience {
+  min-height: 100vh; /* Ensures full viewport height */
+  color: white;
+  background-color: #000; /* Black background */
+  text-align: center;
+  padding: 2rem;
+}
+
+.experience h2 {
+  margin-top: 10px;
+  font-size: 3.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.experience .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid with minimum column size */
+  gap: 3rem; /* Adjust spacing between boxes */
+}
+
+.experience .box {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience .box:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.experience .box img {
+  width: 100%; /* Image spans full width of the box */
+  height: 200px; /* Consistent height for images */
+  object-fit: cover; /* Maintains image aspect ratio without distortion */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.experience .box p {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333; /* Text color for the captions */
+}
+
+@media (max-width: 768px) {
+  .experience .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .experience .box img {
+    height: 150px; /* Reduce image height for very small screens */
+  }
+
+  .experience .box p {
+    font-size: 0.9rem; /* Adjust text size for captions */
+  }
+}
+
+/* experience section ends */
+
+@media (max-width: 1024px) {
+  .experience h2 {
+    font-size: 2.8rem; /* Slightly smaller heading for tablets */
+  }
+
+  .experience .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid for tablets */
+  }
+
+  .experience .box p {
+    font-size: 2rem; /* Adjust text size for captions */
+  }
+}
+
+/* Media queries for mobiles */
+@media (max-width: 768px) {
+  .experience h2 {
+    font-size: 2.5rem; /* Reduce heading size for smaller screens */
+  }
+
+  .experience .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid for smaller screens */
+  }
+
+  .experience .box img {
+    height: 150px; /* Reduce image height */
+  }
+
+  .experience .box p {
+    font-size: 1.8rem; /* Adjust text size for captions */
+  }
+}
+
+/* Media queries for very small mobiles */
+@media (max-width: 480px) {
+  .experience h2 {
+    font-size: 2rem; /* Smaller heading size for very small screens */
+  }
+
+  .experience .box-container {
+    grid-template-columns: 1fr; /* Single column layout for very small screens */
+  }
+
+  .experience .box img {
+    height: 120px; /* Further reduce image height */
+  }
+
+  .experience .box p {
+    font-size: 1.5rem; /* Adjust text size for very small screens */
+  }
+}
+
+
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    min-height: 400px; /* Large height */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100%;
+}
+.contact-info .logo {
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    width: 400px;  /* Adjust width as needed */
+    min-height: auto;  /* Maintain aspect ratio */
+    z-index: 5;
+}
+}
+
+.contact-info {
+    text-align: right;
+}
+.contact-info p {
+    font-size: 48px;
+    margin: 10px 0;
+    text-transform: none; /* Prevent uppercase transformation */
+}
+
+.contact-info h3 {
+    font-size: 80px; /* Large font size for "Contact info" */
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.fas, .fab {
+    font-size: 30px; /* Large icon size */
+    margin-right: 10px;
+}
+
+.fas.fa-phone {
+    color: #4CAF50; /* Phone icon color */
+}
+
+.fab.fa-whatsapp {
+    color: #25D366; /* WhatsApp icon color */
+}
+
+/* Default styles for larger screens (already provided above) */
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 10px;
+        height: auto; /* Adjust height for small screens */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .contact-info {
+        text-align: left; /* Align text to the left */
+        margin-top: 20px; /* Add spacing between sections */
+    }
+
+    .contact-info .logo {
+        top: 20px; /* Adjust positioning for smaller screens */
+        left: 20px;
+        width: 200px; /* Reduce size for smaller screens */
+    }
+
+    .contact-info h3 {
+        font-size: 24px; /* Smaller font size for titles */
+    }
+
+    .contact-info p {
+        font-size: 16px; /* Smaller font size for text */
+    }
+
+    .fas, .fab {
+        font-size: 20px; /* Reduce icon size */
+        margin-right: 5px;
+    }
+}
+
+/* Media query for very small screens (e.g., smartphones) */
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 5px;
+    }
+
+    .contact-info .logo {
+        width: 150px; /* Further reduce logo size */
+    }
+
+    .contact-info h3 {
+        font-size: 18px; /* Further reduce title font size */
+    }
+
+    .contact-info p {
+        font-size: 14px; /* Further reduce text font size */
+    }
+
+    .fas, .fab {
+        font-size: 16px; /* Smaller icon size */
+    }
+
+}
+
+
+
+
