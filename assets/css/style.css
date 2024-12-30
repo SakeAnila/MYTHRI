@@ -1008,7 +1008,12 @@ h4 {
     font-size: 48px;
     margin: 10px 0;
 }
-
+.logo-text {
+  font-size: 16px; /* Adjust the font size */
+  color: #333; /* Adjust the text color */
+  margin-top: 8px; /* Add some spacing between the logo and the text */
+  font-weight: bold; /* Make the text bold if needed */
+}
 .fas, .fab {
     font-size: 30px; /* Large icon size */
     margin-right: 10px;
@@ -1035,7 +1040,12 @@ h4 {
         flex-direction: column; /* Stack items vertically */
         align-items: flex-start; /* Align items to the start */
     }
-
+    .logo-text {
+        font-size: 16px; /* Adjust the font size */
+        color: #333; /* Adjust the text color */
+        margin-top: 8px; /* Add some spacing between the logo and the text */
+        font-weight: bold; /* Make the text bold if needed */
+    }
     .contact-info {
         text-align: left; /* Align text to the left */
         margin-top: 20px; /* Add spacing between sections */
@@ -1046,7 +1056,7 @@ h4 {
         left: 20px;
         width: 200px; /* Reduce size for smaller screens */
     }
-
+ 
     .contact-info h3 {
         font-size: 24px; /* Smaller font size for titles */
     }
@@ -1059,6 +1069,7 @@ h4 {
         font-size: 20px; /* Reduce icon size */
         margin-right: 5px;
     }
+  
 }
 
 /* Media query for very small screens (e.g., smartphones) */
@@ -1066,21 +1077,26 @@ h4 {
     .footer {
         padding: 5px;
     }
-
+    .logo-text {
+        font-size: 16px; /* Adjust the font size */
+        color: gold; /* Adjust the text color */
+        margin-top: 8px; /* Add some spacing between the logo and the text */
+        font-weight: bold; /* Make the text bold if needed */
+    }
     .contact-info .logo {
-        width: 150px; /* Further reduce logo size */
+        width: 80px; /* Further reduce logo size */
     }
 
     .contact-info h3 {
-        font-size: 18px; /* Further reduce title font size */
+        font-size: 22px; /* Further reduce title font size */
     }
 
     .contact-info p {
-        font-size: 14px; /* Further reduce text font size */
+        font-size: 20px; /* Further reduce text font size */
     }
 
     .fas, .fab {
-        font-size: 16px; /* Smaller icon size */
+        font-size: 20px; /* Smaller icon size */
     }
 
 }
